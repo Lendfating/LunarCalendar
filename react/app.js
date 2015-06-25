@@ -4,8 +4,6 @@
 
 var React = require("react");
 var MainPanel = require("./components/main-panel");
-var injectTapEventPlugin = require("react-tap-event-plugin");
 
-injectTapEventPlugin();
 
 React.render(<MainPanel></MainPanel>, document.body);
