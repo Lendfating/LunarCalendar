@@ -11,7 +11,9 @@
 
 ## 开发和构建
 
-依赖于node.js环境，请预先安装
+依赖于node.js环境，请预先安装。
+
+可直接在浏览器中打开`index.html`进行预览测试，但注意jQuery的引用问题。
 
 ```
 git clone https://git.oschina.net/sinceow/LunarCalendar.git
