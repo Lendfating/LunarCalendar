@@ -1,7 +1,7 @@
 #LunarCalendar
 
 基于 [electron](https://github.com/atom/electron) + [menubar](https://github.com/maxogden/menubar) + [react](https://github.com/facebook/react) + [materialize](https://github.com/Dogfalo/materialize) 
-构建的工具栏日历应用。
+构建的工具栏日历应用，适用于Mac，Windows，Linux平台。
 
 
 日历数据由 [LunarCalendar](https://github.com/zzyss86/LunarCalendar) 提供。
