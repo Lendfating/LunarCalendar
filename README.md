@@ -22,5 +22,9 @@ npm install
 
 npm start
 
+# osx 生成
 npm run-script build
+
+#win32 生成
+npm run-script build-win
 ```
