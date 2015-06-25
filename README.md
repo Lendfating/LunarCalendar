@@ -1,7 +1,6 @@
 #LunarCalendar
 
-基于 [electron](https://github.com/atom/electron) + [menubar](https://github.com/maxogden/menubar)
-+ [react](https://github.com/facebook/react) + [materialize](https://github.com/Dogfalo/materialize) 
+基于 [electron](https://github.com/atom/electron) + [menubar](https://github.com/maxogden/menubar) + [react](https://github.com/facebook/react) + [materialize](https://github.com/Dogfalo/materialize) 
 构建的工具栏日历应用。
 
 
