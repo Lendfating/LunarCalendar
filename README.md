@@ -18,13 +18,18 @@ git clone https://git.oschina.net/sinceow/LunarCalendar.git lc
 
 cd lc
 
+#安装依赖
 npm install
 
+#利用Gulp构建项目并 Watch
 npm start
+
+#本地测试
+npm run-script electron
 
 # osx 生成
 npm run-script build
 
-#win32 生成
+# win32 生成
 npm run-script build-win
 ```
