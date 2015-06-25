@@ -39,8 +39,8 @@
   "main": "main.js",
   "scripts": {
     "postinstall": "gulp bower",
-    "build": "electron-packager . LunarCalendar --platform=darwin --arch=x64 --version=0.26.0 --ignore=node_modules/electron --icon=icon.icns",
-    "build-win": "electron-packager . LunarCalendar --platform=win32 --arch=x64 --version=0.26.0 --ignore=node_modules/electron --icon=icon.ico",
+    "build": "electron-packager . LunarCalendar --platform=darwin --arch=x64 --version=0.26.0 --prune --icon=icon.icns",
+    "build-win": "electron-packager . LunarCalendar --platform=win32 --arch=x64 --version=0.26.0 --prune --icon=icon.ico",
     "electron": "electron .",
     "start": "gulp",
     "test": "gulp test"

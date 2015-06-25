@@ -9,16 +9,16 @@
 
 </body>
 
-<script type="text/javascript" src="./bower/jquery/dist/jquery.min.js"></script>
+<!--<script type="text/javascript" src="./bower/jquery/dist/jquery.min.js"></script>-->
 <script type="text/javascript">
 
     /*
     由于jQuery中已经定义了 "module", 使用browserify加载依赖会使得在node环境下
      出现"jQuery undefined"
      */
-   /* window.$ = window.jQuery = require("./bower/jquery/dist/jquery.min");
+    window.$ = window.jQuery = require("./bower/jquery/dist/jquery.min");
     window.Hammer = require("./bower/hammerjs/hammer.min");
-    window.ipc = require("ipc");*/
+    window.ipc = require("ipc");
 </script>
 <script src="build/bundle.min.js"></script>
 </html>
