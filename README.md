@@ -14,9 +14,9 @@
 依赖于node.js环境，请预先安装
 
 ```
-git clone https://git.oschina.net/sinceow/LunarCalendar.git lc
+git clone https://git.oschina.net/sinceow/LunarCalendar.git
 
-cd lc
+cd LunarCalendar
 
 #安装依赖
 npm install
