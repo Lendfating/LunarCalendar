@@ -9,7 +9,7 @@
 
 ![lc](http://i1.tietuku.com/6cc696c379811560.gif)
 
-## 开发
+## 开发和构建
 
 依赖于node.js环境，请预先安装
 
@@ -17,19 +17,30 @@
 git clone https://git.oschina.net/sinceow/LunarCalendar.git
 
 cd LunarCalendar
+```
 
-#安装依赖
+> 第一步
+```
+#安装Node.js依赖和利用Bower下载前端依赖
 npm install
+```
 
-#利用Gulp构建项目并 Watch
+> 第二步
+```
+#利用Gulp构建项目并 Watch SASS 和 JS
 npm start
+```
 
-#本地测试
+```
+#如需本地测试（可选）
 npm run-script electron
+```
 
-# osx 生成
+> 第三步，生成APP
+```
+#osx 生成
 npm run-script build
 
-# win32 生成
+#win32 生成
 npm run-script build-win
 ```
