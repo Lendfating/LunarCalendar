@@ -21,31 +21,30 @@ git clone https://git.oschina.net/sinceow/LunarCalendar.git
 cd LunarCalendar
 ```
 
-> 第一步
+> 第一步，安装Node.js依赖和利用Bower下载前端依赖
 
 ```
-#安装Node.js依赖和利用Bower下载前端依赖
 npm install
 ```
 
-> 第二步
+> 第二步，利用Gulp构建项目并 Watch SASS 和 JS
 
 ```
-#利用Gulp构建项目并 Watch SASS 和 JS
 npm start
 ```
 
+进行本地测试（可选）
+
 ```
-#如需本地测试（可选）
 npm run-script electron
 ```
 
 > 第三步，生成APP
 
 ```
-#osx 生成
+#生成osx状态栏日历
 npm run-script build
 
-#win32 生成
+#生成win32菜单栏日历
 npm run-script build-win
 ```
