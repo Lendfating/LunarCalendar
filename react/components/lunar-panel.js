@@ -1,4 +1,5 @@
 var React = require("react");
+var ReactTransitiveNumber = require("react-transitive-number");
 var Store = require("../stores/stores");
 
 
@@ -36,23 +37,25 @@ var LunarPanel = React.createClass({
 
         return (
             <div className="lunar-panel">
-                <div className="ganzhi">
-                    <span className="ganzhi-detail">{chosenDay["GanZhiYear"]}年</span>
-                    <span className="ganzhi-detail">{chosenDay["GanZhiMonth"]}月</span>
-                    <span className="ganzhi-detail">{chosenDay["GanZhiDay"]}日</span>
+                <div className="ganzhi" >
+                    <ReactTransitiveNumber key="ganzhinian" className="ganzhi-detail">{chosenDay["GanZhiYear"] + "年"}</ReactTransitiveNumber>
+                    <ReactTransitiveNumber key="ganzhinmonth" className="ganzhi-detail">{chosenDay["GanZhiMonth"] + "月"}</ReactTransitiveNumber>
+                    <ReactTransitiveNumber key="ganzhiri" className="ganzhi-detail">{chosenDay["GanZhiDay"] + "日"}</ReactTransitiveNumber>
                 </div>
                 <div className="daynumber">
                     <div className="solar-panel">
-                        <span className="solar-detail">{chosenDay["year"]}</span>
-                        <span className="solar-detail">{chosenDay["month"]}月</span>
+                        <ReactTransitiveNumber className="solar-detail">{chosenDay["year"]}</ReactTransitiveNumber>
+                        <ReactTransitiveNumber className="solar-detail">{chosenDay["month"] + "月"}</ReactTransitiveNumber>
                     </div>
                     <div className="festival-panel">
                         {festivalElements}
                     </div>
-                    <h1 className="center-align">{chosenDay["day"]}</h1>
+                    <h1 className="center-align">
+                        <ReactTransitiveNumber>{chosenDay["day"]}</ReactTransitiveNumber>
+                    </h1>
                     <p className="lunar-detail">
-                        <span>{chosenDay["lunarMonthName"]}</span>
-                        <span>{chosenDay["lunarDayName"]}</span>
+                        <ReactTransitiveNumber>{chosenDay["lunarMonthName"]}</ReactTransitiveNumber>
+                        <ReactTransitiveNumber>{chosenDay["lunarDayName"]}</ReactTransitiveNumber>
                     </p>
                     <div className="hl-panel">
                         <p title={hl_y} className="hl-detail">宜: {hl_y}</p>

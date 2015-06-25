@@ -1,9 +1,9 @@
 var gulp = require("gulp");
 var sass = require("gulp-sass");
 var minify = require("gulp-minify-css");
-var bower = require("gulp-bower");
 var uglify = require("gulp-uglify");
 var concat = require("gulp-concat");
+var bower = require("gulp-bower");
 var watch = require("gulp-watch");
 var del = require("del");
 var rename = require("gulp-rename");
@@ -15,19 +15,21 @@ var concatcss = require("gulp-concat-css");
 var cssurladjuster = require("gulp-css-url-adjuster");
 var jasmine = require("gulp-jasmine");
 var jasreporter = require("jasmine-reporters");
+var mainbowerfiles = require("main-bower-files");
+var filter = require("gulp-filter");
 
 var config = {
     "js": [
-        //"js/jquery/dist/jquery.js",
-        "js/materialize/dist/js/materialize.js",
-        "js/json3/lib/json3.js"
+        "bower/materialize/dist/js/materialize.js",
+        "bower/json3/lib/json3.js",
+        "bower/hammerjs/hammer.js"
     ],
     "css": [
-        //"js/fontawesome/css/font-awesome.css"
+        "bower/animate.css/animate.css"
     ]
 };
 
-gulp.task("default", ["bower"], function () {
+gulp.task("default", function () {
     gulp.start("scss", "js");
     gulp.watch(["./sass/*.scss", "./sass/**/*.scss"], ["scss"]);
     gulp.watch(["./react/*.js", "./react/**/*.js", "./src/*.js"], ["js"]);
@@ -45,10 +47,9 @@ gulp.task("test", function () {
         }));
 });
 
-gulp.task("bower", function () {
-    bower();
+gulp.task("bower", function(){
+   bower();
 });
-
 
 gulp.task("scss", function () {
     var scss_stream = gulp.src(["./sass/*.scss", "./sass/**/*.scss"])
@@ -66,6 +67,8 @@ gulp.task("scss", function () {
         .pipe(concatcss("bundle.css"))
         .pipe(cssurladjuster({
             replace: ["../fonts/", "../font/"]
+        })).pipe(cssurladjuster({
+            replace: ["../../font/", "../font/"]
         }))
         .pipe(minify())
         .pipe(rename("bundle.min.css"))

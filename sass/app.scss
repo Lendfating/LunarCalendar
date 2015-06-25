@@ -1,5 +1,6 @@
-@import "../js/materialize/sass/materialize";
-@import "../js/fontawesome/scss/font-awesome";
+@import "../bower/materialize/sass/materialize";
+@import "../bower/fontawesome/scss/font-awesome";
+
 
 .row {
     margin-bottom: 10px;
@@ -173,7 +174,7 @@
             font-size: 26px;
             margin: 5px 0 0 0;
             padding: 20px 0;
-            span {
+            &> span{
                 margin: 0 5px;
             }
         }
