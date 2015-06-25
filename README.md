@@ -7,7 +7,7 @@
 日历数据由 [LunarCalendar](https://github.com/zzyss86/LunarCalendar) 提供。
 
 
-![lc](https://git.oschina.net/sinceow/LunarCalendar/attach_files/download?i=12944&u=http%3A%2F%2Ffiles.git.oschina.net%2Fgroup1%2FM00%2F00%2F82%2FfMqNk1WLe8KAel2wAAJt9FC04m8699.png%3Ftoken%3D55ba04e323b5739c9cdbcceeac5e8f7d%26ts%3D1435208627%26filename%3Dlc.png)
+![lc](http://i1.tietuku.com/6cc696c379811560.gif)
 
 ## 开发
 
