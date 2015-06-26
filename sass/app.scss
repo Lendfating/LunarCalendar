@@ -43,6 +43,7 @@
 .oneofseven {
     width: (90% / 7);
     margin: 0 2px;
+    cursor: pointer;
     &:hover {
         background: color("teal", "lighten-2");
         color: #FFF;
