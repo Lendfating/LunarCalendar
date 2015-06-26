@@ -7,9 +7,11 @@
 日历数据由 [LunarCalendar](https://github.com/zzyss86/LunarCalendar) 提供。
 
 
+---
 
-> [LunarCalendar.app](http://pan.baidu.com/s/1dDB7CIH) 下载
+> **下载链接** [LunarCalendar.app](http://pan.baidu.com/s/1dDB7CIH) 
 
+---
 
 ![lc](http://i1.tietuku.com/6cc696c379811560.gif)
 
