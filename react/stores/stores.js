@@ -6,32 +6,27 @@ var Assign = require("object-assign");
 var HL = require("./hl/huangli");
 
 
-var _currentDate = new Date(),
-    _currentYear = _currentDate.getFullYear(),
-    _currentMonth = _currentDate.getMonth() + 1,
-    _currentDay = _currentDate.getDate();
-
-
 
 var LcStores = Assign({}, EventEmitter.prototype, {
 
-    chosenDay : false,
+    chosenDay: false,
 
     getChosenDay: function () {
         return this.chosenDay || this.getToday();
     },
 
     getToday: function () {
-        var currentMonthDates = LC.calendar(_currentYear, _currentMonth, false);
+        var date = new Date();
+        var currentMonthDates = LC.calendar(date.getFullYear(), date.getMonth() + 1, false);
         var monthData = currentMonthDates["monthData"];
         for (var i = 0; i < currentMonthDates["monthDays"]; i++) {
-            if (monthData[i]["day"] == _currentDay) {
+            if (monthData[i]["day"] == date.getDate()) {
                 return monthData[i];
             }
         }
     },
 
-    getHL: function(date){
+    getHL: function (date) {
         var month = (date["month"] < 10 ? "0" : "") + date["month"];
         var day = (date["day"] < 10 ? "0" : "") + date["day"];
 
@@ -43,7 +38,6 @@ var LcStores = Assign({}, EventEmitter.prototype, {
     },
 
     emitChangeDay: function () {
-        $(".chosenday").removeClass("chosenday");
         this.emit(Constants.CHANGE_DAY);
     },
 
@@ -59,6 +53,8 @@ var LcStores = Assign({}, EventEmitter.prototype, {
 Dispatcher.register(function (action) {
     var chosenDay = LcStores.getChosenDay();
 
+    var year, month, day;
+
     switch (action.actionType) {
         case Constants.CHANGE_DAY:
             LcStores.chosenDay = action.chosenDay;
@@ -66,20 +62,20 @@ Dispatcher.register(function (action) {
             break;
 
         case Constants.ADD_MONTH:
-            var year = chosenDay["year"] +  (chosenDay["month"] == 12 ? 1 : 0);
-            if(year > 2020){
+            year = chosenDay["year"] + (chosenDay["month"] === 12 ? 1 : 0);
+            if (year > 2020) {
                 break;
             }
-            var month = chosenDay["month"] == 12 ? 1 : chosenDay["month"] + 1;
-            var day = chosenDay["day"];
-            if(day == 31) {
+            month = chosenDay["month"] === 12 ? 1 : chosenDay["month"] + 1;
+            day = chosenDay["day"];
+            if (day === 31) {
                 day = LC.getSolarMonthDays(year, month - 1);
             }
-            if(month == 2){
+            if (month === 2) {
                 day = 28;
             }
 
-            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day),{
+            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day), {
                 day: day,
                 month: month,
                 year: year
@@ -88,20 +84,20 @@ Dispatcher.register(function (action) {
             LcStores.emitChangeDay();
             break;
         case Constants.MINUS_MONTH:
-            var year = chosenDay["year"] -  (chosenDay["month"] == 1 ? 1 : 0);
-            if(year < 2008){
+            year = chosenDay["year"] - (chosenDay["month"] === 1 ? 1 : 0);
+            if (year < 2008) {
                 break;
             }
-            var month = chosenDay["month"] == 1 ? 12 : chosenDay["month"] - 1;
-            var day = chosenDay["day"];
-            if(day == 31) {
+            month = chosenDay["month"] === 1 ? 12 : chosenDay["month"] - 1;
+            day = chosenDay["day"];
+            if (day === 31) {
                 day = LC.getSolarMonthDays(year, month - 1);
             }
-            if(month == 2){
+            if (month === 2) {
                 day = 28;
             }
 
-            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day),{
+            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day), {
                 day: day,
                 month: month,
                 year: year
@@ -111,17 +107,17 @@ Dispatcher.register(function (action) {
             break;
         case Constants.ADD_YEAR:
 
-            var year = chosenDay["year"] + 1;
-            if(year > 2020){
+            year = chosenDay["year"] + 1;
+            if (year > 2020) {
                 break;
             }
-            var month = chosenDay["month"];
-            var day = chosenDay["day"];
-            if(!(year % 400 == 0) || (year % 100 != 0 && year % 4 == 0) && month == 2 && day == 29){
+            month = chosenDay["month"];
+            day = chosenDay["day"];
+            if (!(year % 400 === 0) || (year % 100 != 0 && year % 4 === 0) && month === 2 && day === 29) {
                 day = 28;
             }
 
-            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day),{
+            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day), {
                 day: day,
                 month: month,
                 year: year
@@ -131,17 +127,17 @@ Dispatcher.register(function (action) {
             break;
 
         case Constants.MINUS_YEAR:
-            var year = chosenDay["year"] - 1;
-            if(year < 2008){
+            year = chosenDay["year"] - 1;
+            if (year < 2008) {
                 break;
             }
-            var month = chosenDay["month"];
-            var day = chosenDay["day"];
-            if(!(year % 400 == 0) || (year % 100 != 0 && year % 4 == 0) && month == 2 && day == 29){
+            month = chosenDay["month"];
+            day = chosenDay["day"];
+            if (!(year % 400 === 0) || (year % 100 != 0 && year % 4 === 0) && month === 2 && day === 29) {
                 day = 28;
             }
 
-            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day),{
+            LcStores.chosenDay = Assign({}, LC.solarToLunar(year, month, day), {
                 day: day,
                 month: month,
                 year: year

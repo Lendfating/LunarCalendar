@@ -1,6 +1,5 @@
 var React = require("react/addons");
 var CX = require('react/lib/cx');
-;
 var Actions = require("../actions/actions");
 var LC = require("lunar-calendar");
 

@@ -15,7 +15,13 @@ var MainPanel = React.createClass({
     },
 
     componentDidMount: function () {
-        Store.addChangeDayListener(this._onChange)
+        Store.addChangeDayListener(this._onChange);
+
+        //在打开窗口时刷新
+        ipc.on("REFRESH_APP", function(){
+            Store.chosenDay = Store.getToday();
+            Store.emitChangeDay();
+        });
     },
 
 
@@ -43,6 +49,8 @@ var MainPanel = React.createClass({
             chosenDay: Store.getChosenDay(),
             chosenMonthDates: Store.getCurrentMonthDates()
         });
+
+        $(".chosenday").removeClass("chosenday");
     }
 });
 
