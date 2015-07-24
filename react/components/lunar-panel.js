@@ -67,5 +67,4 @@ var LunarPanel = React.createClass({
     }
 });
 
-
 module.exports = LunarPanel;

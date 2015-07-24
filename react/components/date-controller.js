@@ -12,8 +12,9 @@ var DateController = React.createClass({
         return (
             <div>
                 <div className="date-controller">
-                    <a href="javascript:void(0);" onClick={this._minusYear}><i
-                        className="fa fa-2x fa-angle-double-left fa-fw"></i></a>
+                    <a href="javascript:void(0);" onClick={this._minusYear}>
+                        <i className="fa fa-2x fa-angle-double-left fa-fw"></i></a>
+
                     <a href="javascript:void(0);" onClick={this._minusMonth}><i
                         className="fa fa-2x fa-angle-left fa-fw"></i></a>
                     <span className="year-block">{chosenDay["year"]}</span>
