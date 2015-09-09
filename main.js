@@ -11,11 +11,11 @@ if(isDebug){
 }
 
 var mb = menubar({
+    preloadWindow: true,
     dir: __dirname,
     width: 800,
     height: 440,
     icon: __dirname + "/icon.png"
-
 });
 
 mb.on("ready", function ready() {
