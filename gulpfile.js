@@ -21,8 +21,7 @@ var filter = require("gulp-filter");
 var config = {
     "js": [
         "bower/materialize/dist/js/materialize.js",
-        "bower/json3/lib/json3.js",
-        "bower/hammerjs/hammer.js"
+        "bower/json3/lib/json3.js"
     ],
     "css": [
         "bower/animate.css/animate.css"
@@ -37,18 +36,17 @@ gulp.task("default", function () {
     console.log("Watching js...");
 });
 
-
 gulp.task("test", function () {
     gulp.src(["./react/__tests__/*.js"])
         .pipe(jasmine({
-            verbose:true,
+            verbose: true,
             includeStackTrace: true,
             reporter: new jasreporter.TerminalReporter()
         }));
 });
 
-gulp.task("bower", function(){
-   bower();
+gulp.task("bower", function () {
+    bower();
 });
 
 gulp.task("scss", function () {
@@ -59,7 +57,6 @@ gulp.task("scss", function () {
         }))
         .pipe(sass())
         .pipe(gulp.dest("build"));
-
 
     var css_stream = gulp.src(config.css);
 

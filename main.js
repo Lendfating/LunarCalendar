@@ -3,10 +3,10 @@ var ipc = require("ipc");
 var path = require("path");
 var process = require("process");
 
-var isDebug = process.argv.some(function (arg){
+var isDebug = process.argv.some(function (arg) {
     return arg === '--with-dev-tools'
 });
-if(isDebug){
+if (isDebug) {
     require('electron-debug')();
 }
 

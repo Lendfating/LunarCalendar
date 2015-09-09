@@ -1,7 +1,7 @@
 {
   "name": "LunarCalendar",
   "description": "A lunar calendar.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "private": true,
   "dependencies": {
     "electron-debug": "^0.2.0",
@@ -14,6 +14,7 @@
     "react-transitive-number": "~1.1.0"
   },
   "devDependencies": {
+    "cpr": "^0.4.1",
     "del": "~1.2.0",
     "electron-packager": "^4.0.2",
     "electron-prebuilt": "0.32.1",
