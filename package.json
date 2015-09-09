@@ -4,12 +4,13 @@
   "version": "2.0.1",
   "private": true,
   "dependencies": {
-    "keymirror": "^0.1.1",
-    "menubar": "~2.0.0",
-    "lunar-calendar": "~0.1.4",
+    "electron-debug": "^0.2.0",
     "flux": "^2.0.3",
-    "react": "^0.13.3",
+    "keymirror": "^0.1.1",
+    "lunar-calendar": "~0.1.4",
+    "menubar": "~2.0.0",
     "object-assign": "~2.0.0",
+    "react": "^0.13.3",
     "react-transitive-number": "~1.1.0"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "build": "electron-packager . LunarCalendar --platform=darwin --arch=x64 --version=0.32.1 --prune --icon=icon.icns",
     "build-win": "electron-packager . LunarCalendar --platform=win32 --arch=x64 --prune --version= 0.32.1 --icon=icon.ico",
     "electron": "electron .",
+    "electron-debug": "electron . --with-dev-tools",
     "start": "gulp",
     "test": "gulp test"
   }
