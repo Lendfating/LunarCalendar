@@ -5,7 +5,7 @@ var path = require("path");
 var mb = menubar({
     dir: __dirname,
     width: 800,
-    height: 418,
+    height: 440,
     icon: __dirname + "/icon.png"
 
 });
@@ -21,4 +21,3 @@ mb.on("ready", function ready() {
         window.webContents.send("REFRESH_APP");
     });
 });
-
