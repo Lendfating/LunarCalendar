@@ -23,9 +23,4 @@ mb.on("ready", function ready() {
     ipc.on("QUIT_APP", function (event, args) {
         mb.app.quit();
     });
-
-    mb.on("show", function () {
-        var window = mb.window;
-        window.webContents.send("REFRESH_APP");
-    });
 });
